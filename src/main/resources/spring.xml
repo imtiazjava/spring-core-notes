@@ -8,41 +8,11 @@ http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.3.xsd">
  
- <context:annotation-config/>
  
-<!-- Configure the address bean -->
-<bean  id="address1" class="com.cgi.main.beans.Address">
-<!-- constructor injection -->
-  <constructor-arg index="0" name="street" value="ameerpet"/>
-  <constructor-arg index="1" name="city" value="hyderabad"/>
-  <constructor-arg index="2" name="state" value="ts"/>
-</bean>
-
-
-<!-- Configure the address bean -->
-<bean  id="address2" class="com.cgi.main.beans.Address">
-<!-- constructor injection -->
-  <constructor-arg index="0" name="street" value="sg road"/>
-  <constructor-arg index="1" name="city" value="secunderabad"/>
-  <constructor-arg index="2" name="state" value="ts"/>
-</bean>
-
-<!-- Configure the employee bean -->
-<bean id="emp" class="com.cgi.main.beans.Employee">
-<!-- setter injection -->
-<property name="id" value="1001"/>
-<property name="name" value="RAJU"/>
-<property name="salary" value="30000"/>
  
-<property name="addresses">
-	<list>
-			<ref bean="address1"/>
-			<ref bean="address2"/>
-			
-	</list>
-</property>
+ <context:component-scan base-package="com.cgi.main"></context:component-scan>
+    
  
-</bean>
 
 
 </beans>

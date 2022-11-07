@@ -1,29 +1,24 @@
 package com.cgi.main.beans;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Employee {
 	private int id;
 	private String name;
 	private double salary;
 	@Autowired
-	@Qualifier(value="address2")
-	private Address address;//Has-A relationship 
+	private Address address;
 
-	private List<Address> addresses;
-	
-	
 	public Employee() {
 		System.out.println("EMP object is created");
 	}
 
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -36,16 +31,9 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address=" + address + ", addresses="
-				+ addresses + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", address=" + address + "]";
 	}
 
-	 
-	
 }

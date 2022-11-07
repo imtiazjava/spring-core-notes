@@ -13,7 +13,7 @@ public class ClientCode {
 		String configLocation="spring.xml";
 		ApplicationContext context=new ClassPathXmlApplicationContext(configLocation);
 		
-		Employee e=context.getBean(Employee.class,"emp");
+		Employee e=context.getBean(Employee.class,"employee");
 		System.out.println(e.toString());
 	}
 
